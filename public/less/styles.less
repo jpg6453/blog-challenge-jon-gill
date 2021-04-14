@@ -1,0 +1,243 @@
+/* colors */
+@background-color-light: #fafafa;
+@background-color-med: #f4f4f4;
+@background-color-dark: #193252;
+@background-color-accent: #00acee;
+
+/*fonts */
+@font-family:Source Sans Pro;
+
+/*font-weights */
+@font-weight-light:300;
+@font-weight-med:400;
+@font-weight-heavy:600;
+
+/* font colors */
+@color-heading:#213f66;
+@color-secondary:#283147;
+
+/* global */
+body {
+    background-color: @background-color-med;
+    padding-top: 6rem;
+    font-family: @font-family;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* nav */
+.navbar-light .navbar-brand {
+    font-family: 'Monoton', cursive;
+    font-size:24px;
+    letter-spacing:4px;
+	color: @color-heading;
+    margin-left:2rem;
+}
+
+.navbar-toggler {
+	border: none;
+	
+} 
+
+nav {
+	min-height: 6rem;
+    background-color: @background-color-light;
+    box-shadow: 0px 15px 10px -18px #111;	
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:@color-heading;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-transform: uppercase;
+        &:hover {
+            color:#000;
+        }
+}
+/* hero img */
+.hero-img {
+	background: url('/img/hero.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: bottom;
+	height: 35rem;
+	position: relative;
+    background-color: @background-color-dark;
+}
+
+/* section headings */
+
+.section-heading {
+    font-weight: @font-weight-med;
+    letter-spacing: 2px;
+}
+.section-sub-heading {
+    font-weight: @font-weight-light;
+    font-size: 1.5rem;
+    line-height: 2;
+    letter-spacing: 1px;
+    
+}
+
+.separator {
+    border-top: 1.5px solid @color-secondary;     
+}
+
+/* blog cards */
+
+.blog-card {
+    border:none;
+    background-color: transparent;
+}
+
+.blog-title  {
+    font-weight:@font-weight-heavy;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.blog-link {
+    color: @color-heading;
+    text-decoration: none;
+    &:hover{
+        color:#000;
+        text-decoration: none;
+        }
+    }
+
+.blog-desc {
+    color:@color-secondary;
+    font-weight:@font-weight-heavy;
+    letter-spacing: 1px;
+}
+
+.blog-content {
+    color:@color-secondary;
+    font-weight:@font-weight-med;
+    letter-spacing: 1px;
+}
+
+.author-text {
+    letter-spacing: 1px;
+}
+
+.blog-nav-icon {
+    font-size: 2rem;
+    color:@color-secondary;
+    display:inline;
+    margin: 2rem;
+        &:hover {
+            color:@background-color-accent;
+        }
+}
+
+/* comment section */
+.username {
+    color:#0275d8;
+    font-weight: @font-weight-heavy;
+}
+
+.add-comment-form {
+    background-color: @background-color-dark;
+    border-radius: 8px;
+}
+
+.submit-btn {
+    background-color: @background-color-accent;
+    border-radius: 25px;
+    border:none;
+        &:hover {
+            background-color:@color-secondary;
+           
+        }
+}
+
+.article-img {
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+}
+
+.comment-panel {
+    max-height: 19.5rem;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+/* back to home link */
+.back-arrow{
+    font-size:1.5rem;
+    color:@color-secondary;
+      &:hover {
+          color:@background-color-accent;
+      }
+}
+
+.error-card {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .35);
+    border:none;
+}
+
+    
+/* footer */
+
+.social-icons-footer a {
+    display: inline;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    color: 	#00acee;
+        &:hover {
+            color: @color-heading;
+        }
+  }
+
+.footer-text {
+    color: #f4f4f4;
+    letter-spacing: 1px;
+    font-weight: @font-weight-light;
+}
+
+.footer-bg{
+    background-color: @background-color-dark;
+}
+
+#toTopBtn {
+	display: none;
+	position: fixed;
+	bottom: 200px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: unset;
+	background-color: rgba(0, 0, 0, .1);
+	color: #000;
+	cursor: pointer;
+	border-radius: 50%;
+	font-size: 1rem;
+	width: 3rem;
+	height: 3rem;
+        &:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+}
+
+/* Media query hero-img on mobile */
+
+@media only screen and (max-width: 768px) {
+    .hero-img {
+        height: 20rem;
+
+        }
+    }
+
+
+
+
+
+
+
+ 

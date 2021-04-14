@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('head'); %>
+    
+
+<body>
+    
+    <%- include ('header'); %>
+    <!--hero img-->
+    <div class="container-fluid hero-img"></div>
+
+    <!--headings-->
+    <section class="mt-5">
+        <div class="container blog-container">
+            <div class="mb-5 text-center">
+                <h1 class="section-heading">Take Control of Your Wellness</h1>
+                <p class="section-sub-heading">Learn More about Convenient at Home Testing</p>
+            </div>
+            <div class="row">
+
+                <!--logic to build blog cards-->
+                <% for(let i = 0; i < data.length; i++) { %>
+                    <div class="<%= i<=1 ? 'col-md-6': 'col-md-6 col-xl-3' %> pb-5">
+                        <div class="card blog-card">
+                            <img class="card-img-top" src="img/<%= data[i].slug %>.jpg" alt="">
+                            <div class="card-body pb-0">
+                                <a class="blog-link" href="blogs/<%= data[i].slug %>">
+                                <h4 class="card-title blog-title"><%- data[i].title %></h4>
+                                </a>
+                                <div class="author-text">
+                                    <small><%- data[i].author %> | </small>
+                                    <small class="mb-2"><%- data[i].publish_date %></small>
+                                </div>
+                                <div class="separator mt-2 mb-2"></div>
+                                <p class="card-text blog-desc"><%- data[i].description %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div> 
+        </div>
+    </section>
+
+    <!-- floating to Top button-->
+	<button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+    <%- include('footer'); %>
+    <%- include('bs-scripts'); %>
+    <script src="/js/totop.js"></script>
+    
+</body>
+</html>
+
+
+
+

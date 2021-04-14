@@ -1,0 +1,186 @@
+/* colors */
+/*fonts */
+/*font-weights */
+/* font colors */
+/* global */
+body {
+  background-color: #f4f4f4;
+  padding-top: 6rem;
+  font-family: Source Sans Pro;
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* nav */
+.navbar-light .navbar-brand {
+  font-family: 'Monoton', cursive;
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: #213f66;
+  margin-left: 2rem;
+}
+.navbar-toggler {
+  border: none;
+}
+nav {
+  min-height: 6rem;
+  background-color: #fafafa;
+  box-shadow: 0px 15px 10px -18px #111;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #213f66;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #000;
+}
+/* hero img */
+.hero-img {
+  background: url('/img/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 35rem;
+  position: relative;
+  background-color: #193252;
+}
+/* section headings */
+.section-heading {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.section-sub-heading {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+.separator {
+  border-top: 1.5px solid #283147;
+}
+/* blog cards */
+.blog-card {
+  border: none;
+  background-color: transparent;
+}
+.blog-title {
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.blog-link {
+  color: #213f66;
+  text-decoration: none;
+}
+.blog-link:hover {
+  color: #000;
+  text-decoration: none;
+}
+.blog-desc {
+  color: #283147;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.blog-content {
+  color: #283147;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.author-text {
+  letter-spacing: 1px;
+}
+.blog-nav-icon {
+  font-size: 2rem;
+  color: #283147;
+  display: inline;
+  margin: 2rem;
+}
+.blog-nav-icon:hover {
+  color: #00acee;
+}
+/* comment section */
+.username {
+  color: #0275d8;
+  font-weight: 600;
+}
+.add-comment-form {
+  background-color: #193252;
+  border-radius: 8px;
+}
+.submit-btn {
+  background-color: #00acee;
+  border-radius: 25px;
+  border: none;
+}
+.submit-btn:hover {
+  background-color: #283147;
+}
+.article-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 1rem;
+}
+.comment-panel {
+  max-height: 19.5rem;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+/* back to home link */
+.back-arrow {
+  font-size: 1.5rem;
+  color: #283147;
+}
+.back-arrow:hover {
+  color: #00acee;
+}
+.error-card {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+  border: none;
+}
+/* footer */
+.social-icons-footer a {
+  display: inline;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  color: #00acee;
+}
+.social-icons-footer a:hover {
+  color: #213f66;
+}
+.footer-text {
+  color: #f4f4f4;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.footer-bg {
+  background-color: #193252;
+}
+#toTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: unset;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+#toTopBtn:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* Media query hero-img on mobile */
+@media only screen and (max-width: 768px) {
+  .hero-img {
+    height: 20rem;
+  }
+}

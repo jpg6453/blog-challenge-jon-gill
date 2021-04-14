@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('head'); %>
+
+
+<body>
+    <%- include ('header'); %>
+        <main class="container">
+            <div class="row">
+                <div class="col-lg-7">
+
+                    <!--back arrow to home-->
+                    <a href="/">
+                        <div class="back-arrow mt-3"><i class="far fa-arrow-alt-circle-left"></i></div>
+                    </a>
+
+                    <!--single blog detail-->
+                    <h1 class="blog-title mt-5"><%- data.blog.title %></h1>
+                    <div class="separator mt-3 mb-3"></div>
+                    <div class="author-text">
+                        <small><%- data.blog.author %> | </small>
+                        <small class=><%- data.blog.publish_date %></small>
+                    </div>
+                    <p class="blog-desc mt-4"><%- data.blog.description %></p>
+                    <img class="w-100 h-auto mb-4" src="/img/<%- data.blog.slug %>.jpg" alt="blog image">
+
+                    <!--blog nav icons--> 
+                    <div class="text-center">
+                        <% if(data.blog.postIndex > 0) { %>
+                            <a href="/blogs/<%- data.blogs[data.blog.postIndex-1].slug %>">
+                                <div class="blog-nav-icon"><i class="fa fa-angle-left"></i></div>
+                            </a>
+                        <% } %>
+    
+                        <% if(data.blog.postIndex < data.blogs.length-1) { %>
+                            <a href="/blogs/<%-data.blogs[data.blog.postIndex+1].slug %>">
+                                <div class="blog-nav-icon"><i class="fa fa-angle-right"></i></div>
+                            </a>
+                        <% } %>
+                    </div>
+
+                    <!--blog content-->
+                    <div class="blog-content mt-4">
+                        <%- data.blog.content %>   
+                    </div>
+                </div>
+                
+                <!--comment panel-->
+                <div class="col-md-8 offset-lg-1 col-lg-4 mx-auto">
+                    <div class="pt-3">
+                            <h4 class="mb-4 mt-2">Comments | <span><%- data.comments.length %></span></h4>
+                            <div class="comment-panel">
+                      
+                                <% for(let i = 0; i < data.comments.length; i++) { %>
+                                <!--user placeholder image-->
+                                <article class="media">
+                                    <img class="rounded-circle article-img" src="/img/user.png" alt="User avatar">
+                                    <div class="media-body mb-2">
+                                        <div class="d-inline">
+                                            <!--comment details-->
+                                            <div class="username mr-2"><%- data.comments[i].user %></div>
+                                            <small class="text-muted"><%- data.comments[i].date %></small>
+                                        </div>
+                                        <p class="article-content"><%- data.comments[i].content %></p>
+                                    </div>
+                                </article>
+                      
+                                <% } %>
+                            </div>
+                            <div>
+                                <%- include('alert'); %>
+                            </div>
+                           
+                
+                            <!-- Comment form-->
+
+                            <div class="add-comment-form mt-4 mb-3 p-3">
+                                <% if (data.comments.length == 0) { %>
+                                <h6 class="footer-text mt-2 mb-3">Be the first to leave a comment...</h6>
+                                    <%} else { %> 
+                                <h6 class="footer-text mt-2 mb-3">Tell us what you think...</h6>
+                                <% } %> 
+
+                                <form action= "/newcomment" method="POST" id="commentform" class="commenting-form">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <input type="text" name="name" id="username" placeholder="First Name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input type="hidden" value="<%= data.blog.id %>" name="blogId" id="blogId" placeholder="Name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <input type="hidden" value="<%= error.msg %>" name="errMsg" id="errMsg" placeholder="Name" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <textarea name="content" id="usercomment" placeholder="Enter your comment here" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <button type="submit" class="btn btn-secondary submit-btn">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>  
+                    </div>
+                </div>
+            </div>    
+        </main>
+        
+        <section class="container">
+            <div class="separator mt-3 mb-3"></div>
+                <!--Latest posts-->
+                <h3 class="section-heading mb-5 mt-5">Latest Posts</h3>
+                <div class="row justify-contents-center mb-5">
+                <% for(let i = (data.blogs.length -1) ; i > (data.blogs.length -4); i-- ) { %>
+                <div class="col-md-4">
+                    <img class="w-100 mb-4" src="/img/<%= data.blogs[i].slug %>.jpg" alt="blog image">
+                    <a class="blog-link" href="/blogs/<%= data.blogs[i].slug %>">
+                        <h4 class="card-title blog-title"><%- data.blogs[i].title %></h4>
+                    </a>
+                    <p class="card-text blog-desc mb-3"><%- data.blogs[i].description %></p>
+                </div>
+                <% } %>
+            </div>
+        </section>
+        <!-- floating to Top button-->
+	    <button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+    <%- include('footer'); %>
+    <%- include('bs-scripts'); %>
+    <script src="/js/totop.js"></script>
+</body>
+</html>
