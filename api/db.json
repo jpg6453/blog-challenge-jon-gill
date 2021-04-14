@@ -155,14 +155,6 @@
       "content": "This is a test comment!",
       "postId": "1",
       "id": 8
-    },
-    {
-      "parent_id": null,
-      "user": "Jon",
-      "date": "2021-04-15",
-      "content": "ddd",
-      "postId": "9",
-      "id": 9
     }
   ]
 }
