@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //Port and hostname
 const port = process.env.PORT || 3000;
-const hostname = 'https://blogjson-server.herokuapp.com/';
+const hostname = 'https://blogjson-server.herokuapp.com';
 
 // Set base url to /blogs
 app.get('/', (req, res) => {
