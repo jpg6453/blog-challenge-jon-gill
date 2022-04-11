@@ -191,4 +191,7 @@ nav {
   .hero-img {
     height: 20rem;
   }
+  .opaque-overlay {
+    height: 20rem;
+  }
 }
